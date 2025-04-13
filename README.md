@@ -1,39 +1,66 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# 🪵 LogMate Flutter Package
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+LogMate is a lightweight Flutter package that allows developers to send logs from their apps to a centralized server powered by Supabase. This helps in tracking errors and debugging apps remotely with ease.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+## 🔧 Features
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+- Simple `initialize()` with just an `API_KEY`
+- Send structured logs with various severity levels (`debug`, `info`, `warning`, `error`)
+- View logs through a web dashboard
 
-## Features
+## 🚀 Getting Started
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+### 1. Install
 
-## Getting started
+Add this to your `pubspec.yaml`:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  logmate: ^1.0.0
 ```
 
-## Additional information
+Then run:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```bash
+flutter pub get
+```
+
+### 2. Initialize LogMate
+
+Call `LogMate.initialize()` with your app’s API key:
+
+```dart
+import 'package:logmate/logmate.dart';
+
+void main() async {
+  await LogMate.initialize(appApiKey: 'YOUR_API_KEY');
+  runApp(MyApp());
+}
+```
+
+### 3. Send Logs
+
+Use the `sendLog` method to log events:
+
+```dart
+await LogMate.sendLog(
+  title: 'Something went wrong',
+  description: 'Null pointer exception on login',
+  severity: LogSeverity.error,
+);
+```
+
+## 💻 Web Dashboard
+
+- Access Free web dashboard here: https://logmate-flutter.web.app/
+- Create apps and get API keys.
+- View logs filtered by date/severity.
+- Edit or delete apps.
+
+## 📄 License
+
+MIT License
+
+---
+
+Made with ❤️ using [Supabase](https://supabase.com) & Flutter.
