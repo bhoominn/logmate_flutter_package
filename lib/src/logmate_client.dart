@@ -25,12 +25,24 @@ class LogMate {
     _isInitialized = true;
   }
 
-  Future<bool> sendLog({required String message, LogSeverity severity = LogSeverity.info, String? source, Map<String, dynamic>? customData}) async {
+  Future<bool> sendLog({
+    required String message,
+    LogSeverity severity = LogSeverity.info,
+    String? source,
+    Map<String, dynamic>? customData,
+  }) async {
     if (!_isInitialized) {
-      throw Exception("[LogMate] LogMate is not initialized. Call LogMate().initialize(...) first.");
+      throw Exception(
+        "[LogMate] LogMate is not initialized. Call LogMate().initialize(...) first.",
+      );
     }
 
-    final result = await _client.from('apps').select('id').eq('api_key', _apiKey).maybeSingle();
+    final result =
+        await _client
+            .from('apps')
+            .select('id')
+            .eq('api_key', _apiKey)
+            .maybeSingle();
 
     print(result);
     if (result == null) {

@@ -1,7 +1,8 @@
 name: logmate
 description: "A Flutter package for LogMate"
 version: 0.0.1-beta
-homepage: ''
+#homepage: ''
+repository: https://github.com/bhoominn/logmate_flutter_package
 
 environment:
   sdk: ^3.7.2
