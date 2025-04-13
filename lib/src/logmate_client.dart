@@ -90,7 +90,6 @@ class LogMate {
             .eq('api_key', _apiKey)
             .maybeSingle();
 
-    print(result);
     if (result == null) {
       throw Exception('[LogMate] App not found.');
     }
