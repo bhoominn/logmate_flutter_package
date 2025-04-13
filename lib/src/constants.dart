@@ -1,0 +1,3 @@
+String supabaseUrl = 'https://gsozjtdkncncqqflhmxe.supabase.co';
+String supabaseApiKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdzb3pqdGRrbmNuY3FxZmxobXhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA5OTg4MzAsImV4cCI6MjA1NjU3NDgzMH0.gpXuCYXUN0J8G65OXO3LFRhizJvssbnOPLMuik4L_Jc';
