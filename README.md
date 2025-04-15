@@ -13,6 +13,11 @@
 
 ---
 
+## Show some love and like to support the project
+
+### Say Thanks Here
+<a href="https://saythanks.io/to/bhoominn" target="_blank"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg"/></a>
+
 ## 🚀 How to Use LogMate
 
 ### ✅ Step 1: Register & Create App
@@ -28,9 +33,8 @@
 
 In your Flutter app, add the following to your `pubspec.yaml`:
 
-```yaml
-dependencies:
-  logmate: ^1.0.0
+```console
+$ flutter pub add nb_utils
 ```
 
 Then run:
@@ -38,6 +42,12 @@ Then run:
 ```bash
 flutter pub get
 ```
+
+## Platform Support
+
+| Android | iOS | MacOS  | Web | Linux | Windows |
+| :-----: | :-: | :---:  | :-: | :---: | :-----: |
+|   ✔️    | ✔️  |  ✔️   | ✔️  |  ✔️   |   ✔️   |
 
 ---
 
@@ -51,7 +61,7 @@ import 'package:logmate/logmate.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  await LogMate.initialize(appApiKey: 'YOUR_API_KEY_FROM_DASHBOARD');
+  await LogMate.instance.initialize(appApiKey: 'YOUR_API_KEY_FROM_DASHBOARD');
   
   runApp(MyApp());
 }
@@ -63,11 +73,16 @@ void main() async {
 
 Call `sendLog()` wherever you want to log something:
 
-```dart
-await LogMate.sendLog(
-  title: 'Login Failed',
+```dart 
+
+/// Basic
+await LogMate.instance.sendLog(message: 'Login Failed');
+
+/// Enhanced
+await LogMate.instance.sendLog(
+  message: 'Login Failed',
   description: 'Exception: No user found with given email.',
-  severity: LogSeverity.error, // Choose from: debug, info, warning, error, critical
+  severity: LogSeverity.error, // Choose from: info, warning, error, critical
 );
 ```
 
@@ -76,21 +91,20 @@ await LogMate.sendLog(
 ## 🧪 Example Use Cases
 
 ```dart
-// For debug messages
-await LogMate.sendLog(title: 'Debug Message', description: 'This is a debug log', severity: LogSeverity.debug);
+// For info messages
+await LogMate.instance.sendLog(title: 'Info Message', description: 'This is a info log', severity: LogSeverity.info);
 
 // For warnings
-await LogMate.sendLog(title: 'Slow Network', description: 'Network response > 5s', severity: LogSeverity.warning);
+await LogMate.instance.sendLog(title: 'Slow Network', description: 'Network response > 5s', severity: LogSeverity.warning);
 
 // For critical crashes
-await LogMate.sendLog(title: 'Crash Report', description: 'App crashed on login screen', severity: LogSeverity.critical);
+await LogMate.instance.sendLog(title: 'Crash Report', description: 'App crashed on login screen', severity: LogSeverity.critical);
 ```
 
 ---
 
 ## 🔐 Security First
 
-- Data is protected using Supabase's Row-Level Security (RLS)
 - Only app owners (users who created the app) can view and manage logs via the dashboard
 
 ---

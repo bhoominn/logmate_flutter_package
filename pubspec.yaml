@@ -1,9 +1,11 @@
 name: logmate
 description: "LogMate is a Flutter package that helps developers track and monitor logs remotely from their apps. It's perfect for debugging, monitoring, or error reporting."
-version: 0.0.4-beta
+version: 0.0.5-beta
 homepage: https://github.com/bhoominn/logmate_flutter_package
 repository: https://github.com/bhoominn/logmate_flutter_package
 issue_tracker: https://github.com/bhoominn/logmate_flutter_package/issues
+funding:
+  - https://www.github.com/sponsors/bhoominn
 
 environment:
   sdk: ^3.7.2
@@ -30,3 +32,8 @@ platforms:
 
 flutter:
   uses-material-design: true
+
+topics:
+  - remotelog
+  - log
+  - logging
