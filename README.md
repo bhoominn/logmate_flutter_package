@@ -92,13 +92,13 @@ await LogMate.instance.sendLog(
 
 ```dart
 // For info messages
-await LogMate.instance.sendLog(title: 'Info Message', description: 'This is a info log', severity: LogSeverity.info);
+await LogMate.instance.sendLog(message  : 'Info Message', description: 'This is a info log', severity: LogSeverity.info);
 
 // For warnings
-await LogMate.instance.sendLog(title: 'Slow Network', description: 'Network response > 5s', severity: LogSeverity.warning);
+await LogMate.instance.sendLog(message  : 'Slow Network', description: 'Network response > 5s', severity: LogSeverity.warning);
 
 // For critical crashes
-await LogMate.instance.sendLog(title: 'Crash Report', description: 'App crashed on login screen', severity: LogSeverity.critical);
+await LogMate.instance.sendLog(message  : 'Crash Report', description: 'App crashed on login screen', severity: LogSeverity.critical);
 ```
 
 ---
